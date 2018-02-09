@@ -1,28 +1,19 @@
 development:
   adapter: postgresql
-  encoding: utf8
-  database: project_development
-  pool: 5
-  username: postgres
-  password: password
-  port: 5454 # Change it to 5432
+  host: localhost
+  username: user
+  database: app-dev
 test: &TEST
   adapter: postgresql
-  encoding: utf8
-  database: project_test
-  pool: 5
-  username: postgres
-  password: password
-  port: 5454 # Change it to 5432
+  host: localhost
+  username: user
+  database: app-test
 
 production:
   adapter: postgresql
-  encoding: utf8
-  database: project_production
-  pool: 5
-  username: postgres
-  password: password
-  port: 5454 # Change it to 5432
+  host: localhost
+  username: user
+  database: app-prod
 
 cucumber:
   <<: *TEST
