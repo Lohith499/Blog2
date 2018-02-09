@@ -5,8 +5,7 @@ development:
   pool: 5
   username: postgres
   password: password
-  host: localhost
-  port: 5432 # Change it to 5432
+  port: 5454 # Change it to 5432
 test: &TEST
   adapter: postgresql
   encoding: utf8
@@ -14,8 +13,7 @@ test: &TEST
   pool: 5
   username: postgres
   password: password
-  host: localhost
-  port: 5432 # Change it to 5432
+  port: 5454 # Change it to 5432
 
 production:
   adapter: postgresql
@@ -24,8 +22,7 @@ production:
   pool: 5
   username: postgres
   password: password
-  host: localhost
-  port: 5432 # Change it to 5432
+  port: 5454 # Change it to 5432
 
 cucumber:
   <<: *TEST
