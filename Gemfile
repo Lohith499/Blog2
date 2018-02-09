@@ -8,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+# Use sqlite3 as the database for Active Record
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -27,7 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'pg', '~> 0.20'
+gem 'rails_12factor'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,9 +49,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-group :development do
-  gem 'pg'
-end
+
+
 group :production do
-  gem 'pg'
+ gem 'pg', '~> 0.20'
+ gem 'rails_12factor'
+end
+
+group :development, :test do
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'sqlite3'
 end
