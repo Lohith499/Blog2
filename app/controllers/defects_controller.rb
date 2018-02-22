@@ -1,5 +1,5 @@
 class DefectsController < ApplicationController
-  before_action :set_defect, :set_issue_types, :set_priorities, :set_statuses,only, only: [:show, :edit, :update, :destroy]
+  before_action :set_defect, :set_issue_types, :set_priorities, :set_statuses, only: [:show, :edit, :update, :destroy]
 
   # GET /defects
   # GET /defects.json
