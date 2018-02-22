@@ -1,5 +1,5 @@
 class BugsController < ApplicationController
-  before_action :set_bug, only: [:show, :edit, :update, :destroy]
+  before_action :set_bug, :set_issue_types, :set_priorities, :set_statuses,only: [:show, :edit, :update, :destroy]
 
   # GET /bugs
   # GET /bugs.json
@@ -70,5 +70,17 @@ class BugsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bug_params
       params.require(:bug).permit(:title, :articles, :issue_type, :priority, :status)
+    end
+
+    def set_statuses
+      @statuses=Bug.status
+    end
+
+    def set_priorities
+      @priorities=Bug.priority
+    end
+
+    def set_issue_types
+      @issue_types=Bug.issue_type
     end
 end
