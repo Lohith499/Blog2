@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Articles</th>
+      <th>User</th>
       <th>Issue type</th>
       <th>Priority</th>
       <th>Status</th>
@@ -19,6 +20,7 @@
       <tr>
         <td><%= defect.title %></td>
         <td><%= defect.articles %></td>
+        <td><%= (defect.user.try(:lname) || "NA") %></td>
         <td><%= defect.issue_type %></td>
         <td><%= defect.priority %></td>
         <td><%= defect.status %></td>
