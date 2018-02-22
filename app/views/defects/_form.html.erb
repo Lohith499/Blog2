@@ -1,0 +1,42 @@
+<%= form_with(model: defect, local: true) do |form| %>
+  <% if defect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(defect.errors.count, "error") %> prohibited this defect from being saved:</h2>
+
+      <ul>
+      <% defect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :defect_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :articles %>
+    <%= form.text_area :articles, id: :defect_articles %>
+  </div>
+
+  <div class="field">
+    <%= form.label :issue_type %>
+  <%= form.select :issue_type, Defect.issue_types.keys, selected: @defect.issue_type%>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.select :priority, Defect.priorities.keys, selected: @defect.priority%>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, Defect.statuses.keys, selected: @defect.status%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

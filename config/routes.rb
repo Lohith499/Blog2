@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :defects
   resources :bugs
   get 'welcome/index'
   resources :articles
