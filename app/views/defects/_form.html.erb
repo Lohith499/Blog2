@@ -26,6 +26,15 @@
   <%= form.select :issue_type, Defect.issue_types.keys, selected: @defect.issue_type%>
   </div>
 
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.select :user_id,
+        option_for_select(User.all.collect{|a| ["#{a.lname},#{a.fname}", a.id]},
+        selected: (@defect.user ? @defect.user.id: User.first.id)), {} %>
+
+
+
   <div class="field">
     <%= form.label :priority %>
     <%= form.select :priority, Defect.priorities.keys, selected: @defect.priority%>
