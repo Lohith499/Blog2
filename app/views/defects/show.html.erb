@@ -11,6 +11,11 @@
 </p>
 
 <p>
+    <strong>User:</strong>
+    <%= (@defect.user.try(:lname) || "NA")%>
+</p>
+
+<p>
   <strong>Issue type:</strong>
   <%= @defect.issue_type %>
 </p>
