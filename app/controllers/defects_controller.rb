@@ -73,15 +73,15 @@ class DefectsController < ApplicationController
     end
 
     def set_statuses
-      @statuses=Defect.status
+      @statuses=Defect.statuses
     end
 
     def set_priorities
-      @priorities=Defect.priority
+      @priorities=Defect.priorities
     end
 
     def set_issue_types
-      @issue_types=Defect.issue_type
+      @issue_types=Defect.issue_types
     end
 
 end
