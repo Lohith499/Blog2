@@ -67,9 +67,11 @@ class DefectsController < ApplicationController
       @defect = Defect.find(params[:id])
     end
 
+    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def defect_params
-      params.require(:defect).permit(:title, :articles, :issue_type, :priority, :status)
+      params.require(:defect).permit(:title, :articles, :issue_type, :priority, :status,:user_id)
     end
 
     def set_statuses

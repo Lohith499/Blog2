@@ -5,5 +5,5 @@ class Defect < ApplicationRecord
 
   validates :title, presence:true
   validates :articles, presence:true
-  belongs_to :user, optional:true
+  belongs_to :user
 end
